@@ -15,8 +15,6 @@ interface Product {
   price: number;
   image: string;
   amount: number;
-  priceFormatted: string;
-  subTotal: string;
 }
 
 const Cart = (): JSX.Element => {
