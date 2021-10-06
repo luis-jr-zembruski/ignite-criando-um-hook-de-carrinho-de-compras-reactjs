@@ -34,19 +34,15 @@ const Cart = (): JSX.Element => {
     )
 
   function handleProductIncrement(product: Product) {
-    const amount = product.amount + 1;
-    const productId = product.id;
-    updateProductAmount({productId, amount})
+    updateProductAmount({productId: product.id, amount: product.amount + 1})
   }
 
   function handleProductDecrement(product: Product) {
-    const amount = product.amount - 1;
-    const productId = product.id;
-    updateProductAmount({productId, amount})
+    updateProductAmount({productId: product.id, amount: product.amount - 1})
   }
 
   function handleRemoveProduct(productId: number) {
-    removeProduct(productId)
+    removeProduct(productId);
   }
 
   return (
@@ -62,9 +58,10 @@ const Cart = (): JSX.Element => {
           </tr>
         </thead>
         <tbody>
+
           {cartFormatted.map(product => {
             return (
-              <tr key={product.id}>
+              <tr key={product.id} data-testid='product'>
                 <td>
                   <img src={product.image} alt={product.title} />
                 </td>
