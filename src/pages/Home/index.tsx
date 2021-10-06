@@ -50,8 +50,8 @@ const Home = (): JSX.Element => {
 
   return (
     <ProductList>
-      {products.map((product) => {
-        return (<li key={product.id}>
+      {products.map((product) => (
+        <li key={product.id}>
           <img src={product.image} alt={product.title} />
           <strong>{product.title}</strong>
           <span>{product.priceFormatted}</span>
@@ -67,8 +67,8 @@ const Home = (): JSX.Element => {
 
             <span>ADICIONAR AO CARRINHO</span>
           </button>
-        </li>)
-      })}
+        </li>
+      ))}
     </ProductList>
   );
 };
